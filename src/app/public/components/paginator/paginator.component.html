@@ -1,0 +1,76 @@
+<!--
+ <section>
+  <button (click)="handlePrevClick()" [disabled]="desabled().prev" class="btn btn-primary">Précédent</button>
+
+  <button (click)="handleNextClick()" [disabled]="desabled().next" class="btn btn-primary">Suivant</button>
+
+  @for (button of buttonsArray() ; track button) {
+
+  @if(button <= 3){ <button class="btn btn-primary">
+    {{ button }}
+    </button>
+    }
+    }
+
+    <span>...</span>
+
+    @if(buttonsArray().length > 3){
+    @for (button of buttonsArray() ; track button) {
+    @if(button > 3){ <button class="btn btn-primary">
+      {{ button }}
+    </button> }
+    }}
+</section>
+-->
+
+@if (pages()) {
+<section class="flex flex-col items-center space-y-4 p-4">
+  <!-- Pagination controls -->
+  <div class="join">
+    <!-- Previous button -->
+    <button (click)="handlePrevClick()" [disabled]="desabled.prev" class="join-item btn btn-primary"
+      [class.btn-disabled]="desabled.prev">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+      </svg>
+      Précédent
+    </button>
+
+    <!-- First page -->
+    @if(paginatorInfo().currentPage > 3) {
+    <button (click)="handleChangePage.emit(1)" class="join-item btn btn-ghost">1</button>
+
+    <!-- Ellipsis if needed -->
+    @if(paginatorInfo().currentPage > 4) {
+    <span class="join-item btn btn-ghost no-animation">...</span>
+    }
+    }
+
+    <!-- Pages around current page -->
+    @for(page of getVisiblePages(); track page) {
+    <button (click)="handleChangePage.emit(page)" class="join-item btn"
+      [ngClass]="page == paginatorInfo().currentPage ? 'btn-error' : 'btn-ghost'">
+      {{ page }}
+    </button>
+    }
+
+    <!-- Ellipsis and last page -->
+    @if(paginatorInfo().currentPage < paginatorInfo().lastPage - 2) { @if(paginatorInfo().currentPage <
+      paginatorInfo().lastPage - 3) { <span class="join-item btn btn-ghost no-animation">...</span>
+      }
+      <button (click)="handleChangePage.emit(paginatorInfo().lastPage)" class="join-item btn btn-ghost">
+        {{ paginatorInfo().lastPage }}
+      </button>
+      }
+
+      <!-- Next button -->
+      <button (click)="handleNextClick()" [disabled]="desabled.next" class="join-item btn btn-primary"
+        [class.btn-disabled]="desabled.next">
+        Suivant
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+  </div>
+</section>
+}

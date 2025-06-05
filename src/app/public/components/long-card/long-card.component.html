@@ -1,0 +1,20 @@
+@if(news){
+<section class="card bg-base-100 shadow-xl overflow-hidden h-full">
+  <!-- Container d'image qui prend toute la largeur -->
+  <div class="w-full h-64 overflow-hidden">
+    <img src="{{ news.image }}" alt="image de la news" class="w-full h-full object-cover">
+  </div>
+
+  <!-- Contenu en dessous de l'image -->
+  <div class="p-4 flex flex-col flex-grow">
+    <div class="flex flex-col flex-grow">
+      <h2 class="text-3xl font-bold">{{ news.titre }}</h2>
+      <p class=" mt-5 text-lg flex-grow">{{ news.texte }}</p>
+      <p class="mt-5">Catégorie : <span class="font-semibold">{{ news.categorie }}</span></p>
+      <p>Publié le : <span class="font-semibold">{{ news.datePublication | date:'dd MMMM yyyy' }}</span></p>
+    </div>
+    <div class="mx-auto mt-5 w-1/2">
+      <a class="btn btn-primary w-full">Lire la suite</a>
+    </div>
+  </div>
+</section> }

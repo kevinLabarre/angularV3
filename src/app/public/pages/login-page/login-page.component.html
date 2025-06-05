@@ -1,0 +1,46 @@
+<section>
+  <form [formGroup]="loginForm" (ngSubmit)="handleConnect()"
+    class="max-w-md mx-auto p-6 bg-base-100 rounded-lg shadow-lg">
+    <h1>Connexion</h1>
+
+    <div class="form-control w-full mb-4">
+      <label class="label">
+        <span class="label-text">Email:</span>
+      </label>
+      <input type="text" formControlName="UserName" placeholder="Entrez votre email"
+        class="input input-bordered w-full" />
+      @if (loginForm.get('UserName')?.invalid && loginForm.get('UserName')?.touched) {
+
+      <label class="label">
+        <span class="label-text-alt text-error">Email invalide: vérifiez le format de l'adresse entrée</span>
+      </label>
+      }
+    </div>
+
+    <div class="form-control w-full mb-6">
+      <label class="label">
+        <span class="label-text">Mot de passe:</span>
+      </label>
+      <input type="password" formControlName="Password" placeholder="Entrez votre mot de passe"
+        class="input input-bordered w-full" />
+      @if (loginForm.get('Password')?.invalid && loginForm.get('Password')?.touched) {
+      <label class="label">
+        <span class="label-text-alt text-error">Mot de passe invalide</span>
+      </label>
+      }
+    </div>
+    @if(error){
+    <p class="text-error">Identifiant ou mot de passe incorect</p>
+    }
+
+    <div class="form-control mt-6">
+      <button type="submit" class="btn btn-primary w-full" [disabled]="loginForm.invalid">
+        Se connecter
+      </button>
+    </div>
+
+    <div class="text-center mt-4">
+      <a class="text-sm link link-hover">Mot de passe oublié?</a>
+    </div>
+  </form>
+</section>

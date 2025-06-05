@@ -1,0 +1,123 @@
+<section>
+  <h1>Bienvenue sur votre espace perso !</h1>
+  <div>
+    @if(user()){
+    @let userData = user()!.content;
+    @for(member of userData ; track member.matricule){
+
+
+
+    <div class="overflow-x-auto">
+      <table class="table table-zebra w-full">
+        <thead>
+          <tr class="bg-primary text-primary-content">
+            <th colspan="2" class="text-center text-lg">Informations du membre de famille
+              <span class="font-semibold">"{{member.nomsReduit}}"</span>
+
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Informations d'identité -->
+          <tr class="bg-base-200">
+            <td colspan="2" class="font-bold">Identité</td>
+          </tr>
+          <tr>
+            <td class="font-medium">Matricule</td>
+            <td>{{ member.matricule }}</td>
+          </tr>
+          <tr>
+            <td class="font-medium">Nom</td>
+            <td>{{ member.nom }}</td>
+          </tr>
+          <tr>
+            <td class="font-medium">Postnom</td>
+            <td>{{ member.postnom }}</td>
+          </tr>
+          <tr>
+            <td class="font-medium">Prénom</td>
+            <td>{{ member.prenom }}</td>
+          </tr>
+          <tr>
+            <td class="font-medium">Nom réduit</td>
+            <td>{{ member.nomsReduit }}</td>
+          </tr>
+
+          <!-- Informations personnelles -->
+          <tr class="bg-base-200">
+            <td colspan="2" class="font-bold">Informations personnelles</td>
+          </tr>
+          <tr>
+            <td class="font-medium">Genre</td>
+            <td>{{ member.genre }}</td>
+          </tr>
+          <tr>
+            <td class="font-medium">Date de naissance</td>
+            <td>{{ member.dateNaissance }}</td>
+          </tr>
+          <tr>
+            <td class="font-medium">État civil</td>
+            <td>{{ member.etatCivil }}</td>
+          </tr>
+
+          <!-- Informations professionnelles -->
+          <tr class="bg-base-200">
+            <td colspan="2" class="font-bold">Informations professionnelles</td>
+          </tr>
+          <tr>
+            <td class="font-medium">Direction</td>
+            <td>{{ member.direction }}</td>
+          </tr>
+          <tr>
+            <td class="font-medium">Code direction</td>
+            <td>{{ member.codeDirection }}</td>
+          </tr>
+
+          <!-- Statut -->
+          <tr class="bg-base-200">
+            <td colspan="2" class="font-bold">Statut</td>
+          </tr>
+          <tr>
+            <td class="font-medium">Actif</td>
+            <td>
+              <div [class]="'badge ' + (member.actif === 1 ? 'badge-success' : 'badge-error')">
+                {{ member.actif === 1 ? 'Actif' : 'Inactif' }}
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td class="font-medium">Pris en charge</td>
+            <td>{{ member.prisEnCharge }}</td>
+          </tr>
+          <tr>
+            <td class="font-medium">Type</td>
+            <td>{{ member.typeString }}</td>
+          </tr>
+
+          <!-- Contact -->
+          <tr class="bg-base-200">
+            <td colspan="2" class="font-bold">Contact</td>
+          </tr>
+          <tr>
+            <td class="font-medium">Adresse</td>
+            <td>{{ member.adresse }}</td>
+          </tr>
+          <tr>
+            <td class="font-medium">Téléphone</td>
+            <td>{{ member.telephone }}</td>
+          </tr>
+          <tr>
+            <td class="font-medium">Email</td>
+            <td>{{ member.email }}</td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+    }
+    } @else {
+    <p>Données non accessible !</p>
+    }
+  </div>
+</section>

@@ -1,0 +1,20 @@
+<header class="shadow-sm bg-base-content text-base-100">
+  <div class="container mx-auto">
+    <nav class="navbar" aria-label="Navigation principale">
+      <div class="navbar-start ml-5">
+        <a class="text-xl font-semibold mr-5 hover:underline" routerLink="/" routerLinkActive="underline"
+          aria-label="Aller à l'accueil" [routerLinkActiveOptions]="{exact: true}">Accueil</a>
+        <a class="text-xl font-semibold mr-5 hover:underline" [routerLinkActiveOptions]="{exact: true}"
+          routerLink="/actualites" [routerLinkActiveOptions]="{exact: true}" routerLinkActive="underline"
+          aria-label="Consulter les actualités">Actualités</a>
+      </div>
+      <div class="navbar-center">
+        <!-- Contenu central si nécessaire -->
+      </div>
+      <div class="navbar-end mr-5">
+        <a class="text-xl font-semibold hover:underline focus:outline-none" routerLink="/se-connecter"
+          routerLinkActive="underline" aria-label="Se connecter à votre compte">Se connecter</a>
+      </div>
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,45 @@
+@if(news && news().length > 0){
+@if(isHomepage){
+<section>
+  <section class="grid grid-cols-1 md:grid-cols-2 gap-4 mx-20">
+    <!-- Colonne gauche -->
+    <div>
+      @if(news() && news().length > 0){
+      <app-long-card [news]="news()[0]" />
+      }
+    </div>
+
+    <!-- Colonne droite avec hauteur égale à celle de gauche -->
+    <div class="md:h-full flex flex-col gap-4">
+      @if(news() && news().length > 1){
+      <div class="flex-1">
+        <app-news-card [news]="news()[1]" class="h-full" />
+      </div>
+      }
+      @if(news() && news().length > 2){
+      <div class="flex-1">
+        <app-news-card [news]="news()[2]" class="h-full" />
+      </div>
+      }
+      @if(news() && news().length > 3){
+      <div class="flex-1">
+        <app-news-card [news]="news()[3]" class="h-full" />
+      </div>
+      }
+    </div>
+  </section>
+</section>
+}@else {
+<!-- Conteneur unique pour tous les articles -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  @if(news()){
+  @for(new of news(); track new.id){
+  <app-news-card [news]="new" class="h-full"></app-news-card>
+  }
+  }
+</section>
+}
+
+}@else {
+<app-error />
+}

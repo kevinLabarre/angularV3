@@ -1,0 +1,12 @@
+<section>
+  <h1>Nos acutalité</h1>
+  <app-news-list [news]="news" />
+  <!--
+  <app-paginator (handlePrev)="previousPage()" [prevDesabled]="previousDesabled()" (handleNext)="nextPage()"
+    [nextDesabled]="nextDesabled()" />
+  -->
+
+  <app-paginator [desabled]="desabledPaginatorButtons()" [paginatorInfo]="paginatorInfo()"
+    (handleChangePage)="goToPageWithPageNumber($event)" />
+
+</section>
