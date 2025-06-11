@@ -1,13 +1,13 @@
 {
   "routes": {
-    "/": {},
-    "/actualites": {},
-    "/actualites-exo": {},
-    "/admin": {},
-    "/se-connecter": {},
-    "/signal-demo": {},
-    "/utilisateur": {},
-    "/utilisateur/depot": {},
-    "/utilisateur/retrait": {}
+    "/kevinLabarre/angularV3.git": {},
+    "/kevinLabarre/angularV3.git/actualites": {},
+    "/kevinLabarre/angularV3.git/actualites-exo": {},
+    "/kevinLabarre/angularV3.git/admin": {},
+    "/kevinLabarre/angularV3.git/se-connecter": {},
+    "/kevinLabarre/angularV3.git/signal-demo": {},
+    "/kevinLabarre/angularV3.git/utilisateur": {},
+    "/kevinLabarre/angularV3.git/utilisateur/depot": {},
+    "/kevinLabarre/angularV3.git/utilisateur/retrait": {}
   }
 }

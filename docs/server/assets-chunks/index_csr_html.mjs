@@ -4,7 +4,7 @@ export default `<!doctype html>
 <head>
   <meta charset="utf-8">
   <title>DaBank</title>
-  <base href="/">
+  <base href="https://github.com/kevinLabarre/angularV3.git">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css">
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>

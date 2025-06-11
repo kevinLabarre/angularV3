@@ -1,6 +1,6 @@
 
 export default {
-  basePath: '/',
+  basePath: 'https://github.com/kevinLabarre/angularV3.git',
   supportedLocales: {
   "en-US": ""
 },
