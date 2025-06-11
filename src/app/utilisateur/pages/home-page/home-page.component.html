@@ -27,10 +27,10 @@
             <td>{{ account.id }}</td>
             <td>{{ account.accountNumber }}</td>
             <td>{{ account.accountType }}</td>
-            <td class="font-medium">{{ account.solde | customCurrency:'EUR' }}</td>
+            <td class="font-medium">{{ account.solde | customCurrency:'CDF' }}</td>
             <td>{{ account.lastTransactionDate | date:'dd/MM/yyyy HH:mm' }}</td>
             <td>
-              <button (click)="accountSelect.set(account)" class="btn btn-primary">Faire un dépôt / retrait</button>
+              <button (click)="handleClickDepot(account)" class="btn btn-primary">Faire un dépôt / retrait</button>
             </td>
           </tr>
           }

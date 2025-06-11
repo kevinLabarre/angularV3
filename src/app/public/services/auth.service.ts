@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, of } from 'rxjs';
 import { AuthResponse } from '../../share/interfaces/cession/auth-response.interface';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  private baseUrl = "https://movia.bcc.cd"
+  private baseUrl = environment.urlBcc
 
   // Quand on utilisera pas les bons identifiants, on se connectera en rôle 'User'
   login(credentials: { UserName: string, Password: string }): Observable<AuthResponse> {

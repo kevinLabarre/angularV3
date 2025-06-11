@@ -1,0 +1,2 @@
+export default `h1{color:var(--color-base-content);font-size:2.5rem;margin:2.5rem auto 1.5rem;display:block;text-align:center;max-width:800px;font-weight:700;position:relative;padding-bottom:.75rem}h1:after{content:"";position:absolute;bottom:0;left:50%;transform:translate(-50%);width:80px;height:4px;background-color:var(--color-base-content);border-radius:2px}
+`;

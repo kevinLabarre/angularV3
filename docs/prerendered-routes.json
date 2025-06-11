@@ -1,0 +1,13 @@
+{
+  "routes": {
+    "/": {},
+    "/actualites": {},
+    "/actualites-exo": {},
+    "/admin": {},
+    "/se-connecter": {},
+    "/signal-demo": {},
+    "/utilisateur": {},
+    "/utilisateur/depot": {},
+    "/utilisateur/retrait": {}
+  }
+}

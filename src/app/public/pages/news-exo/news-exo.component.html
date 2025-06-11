@@ -1,0 +1,12 @@
+<section>
+  <h1>Exercice news avec les signaux</h1>
+
+  <app-news-list [news]="news" />
+  <button class="btn" (click)="prevPage()">précédent</button>
+  <button class="btn" (click)="nextPage()">suivant</button>
+
+  @for(page of paginationTable() ; track $index ; let index = $index){
+  <button class="btn" (click)="changePage(index + 1)">{{index + 1}}</button>
+  }
+
+</section>
