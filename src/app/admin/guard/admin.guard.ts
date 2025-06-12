@@ -18,6 +18,7 @@ export const adminGuard: CanActivateFn = (route, state) => {
 };
 
 //Le guard doit retourner soit :
+
 // true pour autoriser la navigation
 // false pour bloquer la navigation
 // Un UrlTree pour rediriger vers une autre route

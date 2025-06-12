@@ -1,0 +1,13 @@
+<h2>{{ title }}</h2>
+<button id="myButton" class="btn" (click)="addUser()">Ajouter un utilisateur</button>
+<ul>
+  @for (user of users ; track user) {
+  <li>{{ user }}</li>
+  }
+</ul>
+<br>
+<h2>Test Output et Input d'un composant</h2>
+<button id="myOutputButton" class="btn" (click)="handleClick()">Cliquez</button>
+<p id="myP">
+  input affichée : {{ myInput }}
+</p>

@@ -3,6 +3,7 @@ import { NewsPageComponent } from "../pages/news-page/news-page.component";
 import { LoginPageComponent } from "../pages/login-page/login-page.component";
 import { SignalDemoComponent } from "../pages/signal-demo/signal-demo.component";
 import { NewsExoComponent } from "../pages/news-exo/news-exo.component";
+import { FirstTestsComponent } from "../pages/first-tests/first-tests.component";
 
 export const PUBLIC_ROUTES = [
   {
@@ -24,5 +25,9 @@ export const PUBLIC_ROUTES = [
   {
     path: 'signal-demo',
     component: SignalDemoComponent
+  },
+  {
+    path: 'test-unitaires',
+    component: FirstTestsComponent
   }
 ];
